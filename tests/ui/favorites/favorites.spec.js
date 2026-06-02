@@ -8,7 +8,7 @@ import {
 import { createBook } from '../../../helpers/api/books';
 import { BookDetailsPage } from '../../../pages/BookDetailsPage';
 
-test.describe('Favorites UI', () => {
+test.describe('Favorite Books UI', () => {
 
     test('CT-FE-013 - Adicionar Livro aos Favoritos pela UI', async ({ page, request }) => {
 
