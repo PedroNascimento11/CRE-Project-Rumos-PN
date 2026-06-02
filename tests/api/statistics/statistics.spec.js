@@ -9,9 +9,6 @@ test.describe('Statistics API', () => {
 
         const body = await response.json();
 
-        console.log(body);
-
-
         // Assert
         expect(response.status()).toBe(200);
 

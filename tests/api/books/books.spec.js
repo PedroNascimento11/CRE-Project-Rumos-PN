@@ -37,8 +37,6 @@ test.describe('Books API', () => {
 
         const body = await response.json();
 
-        console.log(body);
-
         // Assert
         expect(response.status()).toBe(200);
 
@@ -67,8 +65,6 @@ test.describe('Books API', () => {
         const response = await request.get('/livros/disponiveis');
 
         const body = await response.json();
-
-        console.log(body);
 
         // Assert
         expect(response.status()).toBe(200);
@@ -104,8 +100,6 @@ test.describe('Books API', () => {
         const response = await request.get(`/livros/${createdBookId}`);
 
         const body = await response.json();
-
-        console.log(body);
 
         // Assert
         expect(response.status()).toBe(200);
@@ -220,8 +214,6 @@ test.describe('Books API', () => {
         });
 
         const body = await updateResponse.json();
-
-        console.log(body);
 
         // Assert
         expect(updateResponse.status()).toBe(200);

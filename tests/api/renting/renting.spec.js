@@ -63,8 +63,6 @@ test.describe('Renting Books API', () => {
 
         const rentingBody = await rentingResponse.json();
 
-        console.log(rentingBody);
-
         // Assert
         expect(rentingResponse.status()).toBe(201);
 
@@ -114,8 +112,6 @@ test.describe('Renting Books API', () => {
 
         const rentingBody = await rentingResponse.json();
 
-        console.log(rentingBody);
-
         // Assert
 
             // Current implementation allows arrendamento for books with estoque = 0
@@ -153,8 +149,6 @@ test.describe('Renting Books API', () => {
 
         const createdRenting = await rentingPostResponse.json();
 
-        console.log(createdRenting);
-
         const rentingId = createdRenting.id;
 
             // Second Act - Putting Arrendamento status to Approved
@@ -168,8 +162,6 @@ test.describe('Renting Books API', () => {
         );
 
         const rentingPutBody = await updateResponse.json();
-
-        console.log(rentingPutBody);
 
             // Third Act - Get Book "estoque" again to validate it got reduced by 1
         const updatedBookResponse = await request.get(
@@ -217,8 +209,6 @@ test.describe('Renting Books API', () => {
 
         const createdRenting = await rentingPostResponse.json();
 
-        console.log(createdRenting);
-
         const rentingId = createdRenting.id;
 
             // Second Act - Putting Arrendamento status to Approved
@@ -232,8 +222,6 @@ test.describe('Renting Books API', () => {
         );
 
         const rentingPutBody = await updateResponse.json();
-
-        console.log(rentingPutBody);
 
         // Assert
         expect(updateResponse.status()).toBe(400);
@@ -282,9 +270,6 @@ test.describe('Renting Books API', () => {
         });
 
         const rentingBody2 = await rentingResponse2.json();
-
-        console.log(rentingBody1);
-        console.log(rentingBody2);
 
         // Act - GET List of all user's Book renting
         const rentingListResponse = await request.get(`/arrendamentos/me?usuarioId=${createdUser.usuario.id}`);

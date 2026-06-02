@@ -63,8 +63,6 @@ test.describe('Favorites UI', () => {
 
         await detailsPage.addToFavorites();
 
-        console.log(createdBook);
-
         // Assert - Success alert
         await expect.poll(
             () => dialogMessages.length

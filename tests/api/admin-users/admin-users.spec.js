@@ -55,8 +55,6 @@ test.describe('Purchase Books API', () => {
 
         const usersBody = await usersResponse.json();
 
-        console.log(usersBody);
-
         // Assert
         expect(usersResponse.status()).toBe(200);
 
@@ -100,12 +98,7 @@ test.describe('Purchase Books API', () => {
             }
         );
 
-        console.log(updatedResponse.status());
-        console.log(await updatedResponse.text());
-
         const updatedBody = await updatedResponse.json();
-
-        console.log(updatedBody);
 
         // Assert
         expect(updatedResponse.status()).toBe(200);
@@ -124,14 +117,10 @@ test.describe('Purchase Books API', () => {
 
         createdUserIds.push(user.usuario.id);
 
-        console.log(user);
-
         // Act - Delete User
         const deleteResponse = await request.delete(`/usuarios/${user.usuario.id}`);
 
         const deletedBody = await deleteResponse.json();
-
-        console.log(deleteResponse.status());
 
         // Act - Check if User Still exists
         const usersResponse = await request.get('/usuarios');
@@ -161,14 +150,10 @@ test.describe('Purchase Books API', () => {
 
         createdUserIds.push(user.usuario.id);
 
-        console.log(user);
-
         // Act - Delete User
         const deleteResponse = await request.delete(`/usuarios/${user.usuario.tipo}`);
 
         const deletedBody = await deleteResponse.json();
-
-        console.log(deleteResponse.status());
 
         // Act - Check if User Still exists
         const usersResponse = await request.get('/usuarios');

@@ -13,8 +13,6 @@ test.describe('Registration UI', () => {
 
         user.confirmarSenha = user.senha;
 
-        console.log(user);
-
         await registerPage.goto();
 
         // Alert validation

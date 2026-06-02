@@ -69,8 +69,6 @@ test.describe('Purchase Books API', () => {
 
         const purchaseBody = await purchaseResponse.json();
 
-        console.log(purchaseBody);
-
         // Assert
         expect(purchaseResponse.status()).toBe(201);
 
@@ -125,8 +123,6 @@ test.describe('Purchase Books API', () => {
 
         const purchaseBody = await purchaseResponse.json();
 
-        console.log(purchaseBody);
-
         // Assert
         expect(purchaseResponse.status()).toBe(400);
 
@@ -169,8 +165,6 @@ test.describe('Purchase Books API', () => {
 
         const createdPurchase = await purchaseResponse.json();
 
-        console.log(createdPurchase);
-
         const purchaseId = createdPurchase.id;
 
             // Second Act - Putting Arrendamento status to Approved
@@ -185,16 +179,12 @@ test.describe('Purchase Books API', () => {
 
         const updatedPurchase = await updateResponse.json();
 
-        console.log(updatedPurchase);
-
             // Third Act - Validating current Bock Stock
         const updatedBookResponse = await request.get(
             `/livros/${createdBook.id}`
         );
 
         const updatedBook = await updatedBookResponse.json();
-
-        console.log(updatedBook);
 
         // Assert
         expect(updateResponse.status()).toBe(200);
@@ -240,8 +230,6 @@ test.describe('Purchase Books API', () => {
 
         const createdPurchase = await purchaseResponse.json();
 
-        console.log(createdPurchase);
-
         const purchaseId = createdPurchase.id;
 
             // Second Act - Putting Arrendamento status to Approved
@@ -256,16 +244,12 @@ test.describe('Purchase Books API', () => {
 
         const updatedPurchase = await updateResponse.json();
 
-        console.log(updatedPurchase);
-
             // Third Act - Validating current Bock Stock
         const updatedBookResponse = await request.get(
             `/livros/${createdBook.id}`
         );
 
         const updatedBook = await updatedBookResponse.json();
-
-        console.log(updatedBook);
 
         // Assert
         expect(updateResponse.status()).toBe(200);
@@ -337,9 +321,6 @@ test.describe('Purchase Books API', () => {
 
         const createdPurchase2 = await purchaseResponse2.json();
 
-        console.log(createdPurchase1);
-        console.log(createdPurchase2);
-
         const purchaseId1 = createdPurchase1.id;
         const purchaseId2 = createdPurchase2.id;
 
@@ -348,8 +329,6 @@ test.describe('Purchase Books API', () => {
         const purchaseListResponse = await request.get(`/compras/me?usuarioId=${createdUser.usuario.id}`);
 
         const createdPurchases = await purchaseListResponse.json();
-
-        console.log(createdPurchases);
 
             // Third Act - See that the purchases exist
         const purchase1Exists = createdPurchases.some(
@@ -418,8 +397,6 @@ test.describe('Purchase Books API', () => {
         const response = await request.get('/compras');
 
         const body = await response.json();
-
-        console.log(body);
 
         // Assert
         expect(response.status()).toBe(200);

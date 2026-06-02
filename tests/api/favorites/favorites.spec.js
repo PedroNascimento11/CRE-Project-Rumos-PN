@@ -66,8 +66,6 @@ test.describe('Favorites API', () => {
 
         const body = await response.json();
 
-        console.log(body);
-
         // Assert
         expect(response.status()).toBe(201);
 
@@ -105,8 +103,6 @@ test.describe('Favorites API', () => {
         });
 
         const body = await response.json();
-
-        console.log(body);
 
         // Assert
         expect(response.status()).toBe(201);
@@ -160,8 +156,6 @@ test.describe('Favorites API', () => {
 
         const body = await addFavoriteResponse.json();
 
-        console.log(body);
-
         // Assert - Verify new book is saved on Favorites
         expect(addFavoriteResponse.status()).toBe(201);
 
@@ -187,8 +181,6 @@ test.describe('Favorites API', () => {
 
         expect(favoriteBook.nome).toBe(createdBook.nome);
         expect(favoriteBook.autor).toBe(createdBook.autor);
-
-        console.log(usersFavoriteBody);
 
     });
 
@@ -220,8 +212,6 @@ test.describe('Favorites API', () => {
         });
 
         const body = await addFavoriteResponse.json();
-
-        console.log(body);
 
         // Assert - Verify new book is saved on Favorites
         expect(addFavoriteResponse.status()).toBe(201);
