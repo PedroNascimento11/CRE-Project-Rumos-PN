@@ -1,11 +1,18 @@
 import { randomInt } from "node:crypto";
+import { faker } from '@faker-js/faker';
 
 export function generateUser() {
   const timestamp = Date.now();
 
+  const fullName = faker.person.fullName();
+
+  const sanitizedName = fullName
+    .toLowerCase()
+    .replace(/\s+/g, '.');
+
   return {
-    nome: `User ${timestamp}`,
-    email: `user${timestamp}@teste.com`,
+    nome: `${fullName} ${timestamp}`,
+    email: `${sanitizedName}_${timestamp}@teste.com`,
     senha: 'senha123'
   };
 }
@@ -15,10 +22,10 @@ export function generateBook(overrides = {}) {
   const timestamp = Date.now();
 
   return {
-    nome: `Livro ${timestamp}`,
-    autor: 'Autor Teste',
+    nome: faker.book.title()+timestamp,
+    autor: faker.book.author(),
     paginas: 300,
-    descricao: 'Descricao teste',
+    descricao: faker.lorem.paragraph(),
     imagemUrl: 'https://teste.com/image.jpg',
     estoque: 10,
     preco: 49.9,
